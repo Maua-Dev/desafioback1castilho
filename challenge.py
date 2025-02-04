@@ -50,5 +50,3 @@ def lambda_handler():
             "statusCode": 500,
             "body": f"Erro ao enviar e-mail. Erro: {str(e)}"
         }
-
-lambda_handler()
