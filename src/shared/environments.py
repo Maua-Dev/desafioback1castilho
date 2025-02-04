@@ -44,21 +44,33 @@ class Environments:
         
         if self.stage == STAGE.TEST:
             self.s3_bucket_name = "bucket-test"
+            self.aws_access_key_id = "test-access-key"
+            self.aws_secret_access_key = "test-secret-key"
             self.region = "sa-east-1"
             self.endpoint_url = "http://localhost:8000"
             self.dynamo_table_name = "user_mss_template-table"
             self.dynamo_partition_key = "PK"
             self.dynamo_sort_key = "SK"
             self.cloud_front_distribution_domain = "https://d3q9q9q9q9q9q9.cloudfront.net"
-
+            self.sender_email = "test-sender@example.com"
+            self.receiver_email = "test-receiver@example.com"
+            self.image_key = "test-image-key"
+            self.bucket_name = "test-bucket"
         else:
             self.s3_bucket_name = os.environ.get("S3_BUCKET_NAME")
+            self.aws_access_key_id = os.environ.get("AWS_ACCESS_KEY_ID")
+            self.aws_secret_access_key = os.environ.get("AWS_SECRET_ACCESS_KEY")
             self.region = os.environ.get("REGION")
             self.endpoint_url = os.environ.get("ENDPOINT_URL")
             self.dynamo_table_name = os.environ.get("DYNAMO_TABLE_NAME")
             self.dynamo_partition_key = os.environ.get("DYNAMO_PARTITION_KEY")
             self.dynamo_sort_key = os.environ.get("DYNAMO_SORT_KEY")
             self.cloud_front_distribution_domain = os.environ.get("CLOUD_FRONT_DISTRIBUTION_DOMAIN")
+            self.sender_email = os.environ.get("SENDER_EMAIL")
+            self.receiver_email = os.environ.get("RECEIVER_EMAIL")
+            self.image_key = os.environ.get("IMAGE_KEY")
+            self.bucket_name = os.environ.get("BUCKET_NAME")
+
 
     @staticmethod
     def get_user_repo() -> IChallengeRepository:
