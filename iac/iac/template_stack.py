@@ -15,9 +15,9 @@ class TemplateStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
-        self.rest_api = RestApi(self, "ChallengeTemplate_RestApi",
-                                    rest_api_name="ChallengeTemplate_RestApi",
-                                    description="This is the ChallengeTemplate RestApi",
+        self.rest_api = RestApi(self, "desafioback1castilho_RestApi",
+                                    rest_api_name="desafioback1castilho_RestApi",
+                                    description="This is the desafioback1castilho RestApi",
                                     default_cors_preflight_options=
                                     {
                                         "allow_origins": Cors.ALL_ORIGINS,
@@ -34,7 +34,7 @@ class TemplateStack(Stack):
         }
                                                                )
 
-        self.dynamo_table = TemplateDynamoTable(self, "ChallengeTemplateDynamoTable")
+        self.dynamo_table = TemplateDynamoTable(self, "desafioback1castilho")
 
         ENVIRONMENT_VARIABLES = {
             "STAGE": "DEV",
